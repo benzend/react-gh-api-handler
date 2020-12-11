@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Card, makeStyles, Grid } from "@material-ui/core";
+import { Card, Grid, makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles({
   card: {
@@ -17,7 +17,7 @@ const useStyles = makeStyles({
   },
 });
 
-export const Test = () => {
+export const Users = () => {
   const { card, avatar } = useStyles();
 
   const [users, setUsers] = useState([]);
