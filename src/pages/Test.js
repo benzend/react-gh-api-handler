@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Card, makeStyles } from "@material-ui/core";
+import { Card, makeStyles, Grid } from "@material-ui/core";
 
 const useStyles = makeStyles({
   card: {
@@ -10,7 +10,6 @@ const useStyles = makeStyles({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    margin: "1rem",
   },
   avatar: {
     width: "100px",
@@ -30,13 +29,15 @@ export const Test = () => {
 
   console.log(users[0]);
   return (
-    <>
+    <Grid spacing={3} container>
       {users.map((user) => (
-        <Card className={card} key={user.node_id}>
-          <img className={avatar} src={user.avatar_url} />
-          <a href={user.url}>{user.login}'s page</a>
-        </Card>
+        <Grid item>
+          <Card className={card} key={user.node_id}>
+            <img className={avatar} src={user.avatar_url} />
+            <a href={user.url}>{user.login}</a>
+          </Card>
+        </Grid>
       ))}
-    </>
+    </Grid>
   );
 };
